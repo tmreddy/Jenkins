@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenkins Fundamentals</title>
+</head>
+<body>
+    <h1>Jenkins Fundamentals</h1>
+    <ol>
+        <li><code>export PS1='$' </code>This command hides the user on the console.</li>
+        <li><code>sudo apt update -y </code>Command to update ubuntu</li>
+        <li><code>sudo apt install -y openjdk-8-jre </code>Make sure that jenkins dependencies are installed. This command failed on AWS ubuntu</li>
+        <li><code>java </code>When gave java as command got suggesstion to install, picked the below command</li>
+        <li><code>sudo apt install default-jre </code></li>
+        <li><code>java --version </code>This command specifies the java version</li>
+        <li><code>wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war </code>Command to get the jenkins war file to the ubuntu machine.</li>
+        <li><code>ls -a </code>Jenkins.war file is downloaded.</li>
+        <li><code>sudo java -jar jenkins.war --httpPort=80 --prefix=/dashboard </code>This command is used to install jenkins using java, we will change the default port 8080 to 80, and we set the prefix as /dashboard </li>
+        <li>initial password is displayed on the console </li>
+        <li>Initial password can be found at /root/.jenkins/secrets/initialAdminPassword</li>
+        <li>Initial password can also be found at sudo cat /var/log/jenkins/jenkins.log</li>
+        <li>in browser give the ubuntu instance name, we will get error, add /dashboard we will get unlock jenkins page</li>
+        <li><code>systemctl status jenkins </code></li>
+        <li><code>systemctl enable jenkins</code></li>
+        <li><code>wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+            sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenk
+            sudo apt-get update
+            sudo apt-get install -y openjdk-8-jre jenkins</code></li>
+        <li>source of some java application https://github.com/darealmc/some_java </li>
+        <li>Second method to install jenkins on ubuntu</li>
+        <li><code>
+            wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+        </code></li>
+        <li><code>
+            sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+        </code></li>
+        <li><code>sudo apt update</code></li>
+        <li><code>sudo apt-get install -y openjdk-8-jre jenkins</code></li>
+        <li><code>sudo apt-get install -y jenkins</code></li>
+        <li><code>wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+            sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > \
+                /etc/apt/sources.list.d/jenkins.list'
+            sudo apt-get update
+            sudo apt-get install jenkins
+            </code> These commands worked on aws ubuntu </li>
+        <li><code>sudo systemctl enable jenkins</code></li>
+        <li><code>sudo systemctl start jenkins</code></li>
+        <li><code>sudo systemctl status jenkins</code></li>
+        <li>This is working as expected : https://pkg.jenkins.io/debian-stable/</li>
+    </ol>
+</body>
+</html>
